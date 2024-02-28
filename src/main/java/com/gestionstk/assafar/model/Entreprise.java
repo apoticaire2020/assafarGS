@@ -1,9 +1,6 @@
 package com.gestionstk.assafar.model;
 
-
-import java.math.BigDecimal;
 import java.util.List;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -14,25 +11,28 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@EqualsAndHashCode(callSuper = true)
 @Entity
-@Table(name = "clients")
-public class Clients extends AbstractEntity {
-   
-    private String nomcomplet;
-    private String adress;
-    private String tel;
-    private BigDecimal solde;
-    private Integer idEntreprise;
+@Table(name = "entreprise")
+public class Entreprise extends AbstractEntity  {
+ 
+    private String nom;
 
-     @OneToMany(mappedBy = "clients")
-  private List<CommandeClient> commandeClients;
+    private String description;
 
-     @OneToMany(mappedBy = "clients")
-  private List<Reglement> reglement ;
- }
+  private String email;
+
+  private String numTel;
+
+  private String steWeb;
+
+  
+  @OneToMany(mappedBy = "entreprise")
+  private List<Utilisateur> utilisateurs;
+}

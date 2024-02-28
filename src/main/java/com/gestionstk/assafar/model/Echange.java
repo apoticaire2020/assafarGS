@@ -1,7 +1,7 @@
 package com.gestionstk.assafar.model;
 
-
 import java.math.BigDecimal;
+import java.time.Instant;
 import java.util.List;
 
 import jakarta.persistence.Entity;
@@ -21,18 +21,17 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "clients")
-public class Clients extends AbstractEntity {
-   
-    private String nomcomplet;
-    private String adress;
-    private String tel;
-    private BigDecimal solde;
-    private Integer idEntreprise;
+@Table(name = "echange")
+public class Echange extends AbstractEntity{
 
-     @OneToMany(mappedBy = "clients")
-  private List<CommandeClient> commandeClients;
+	private Instant  date_echange;
+	 private BigDecimal montant_echange;
+	 private Integer idEntreprise;
 
-     @OneToMany(mappedBy = "clients")
-  private List<Reglement> reglement ;
- }
+	   @ManyToOne
+	   @JoinColumn(name = "idconfrere")
+	  private Confrere confrere;
+	   
+	   @OneToMany(mappedBy = "echange")
+	   private List<EchangeDetail> echangedetail;
+}

@@ -1,6 +1,7 @@
 package com.gestionstk.assafar.model;
 
 import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -9,23 +10,22 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
-
-
 @Data
-@NoArgsConstructor
+@NoArgsConstructor  
 @AllArgsConstructor
-
+@EqualsAndHashCode(callSuper = true)
 @Entity
-@Table(name = "category")
-public class Category extends AbstractEntity {
+@Table(name = "fournisseur")
+public class Fournisseur extends AbstractEntity{
 
-  private String libcategorie;
-
-  private Integer idEntreprise;
-
-  @OneToMany(mappedBy = "category")
-  private List<Article> articles;
-
+     private String nom;
+     private String tel;
+     private String ville;
+     private Integer idEntreprise;
+    
+      @OneToMany(mappedBy = "fournisseur")
+  private List<CommandeFournisseur> commandeFournisseurs;
 }

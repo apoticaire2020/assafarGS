@@ -1,6 +1,8 @@
 package com.gestionstk.assafar.model;
 
 
+
+
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -21,18 +23,16 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "clients")
-public class Clients extends AbstractEntity {
-   
-    private String nomcomplet;
-    private String adress;
-    private String tel;
-    private BigDecimal solde;
-    private Integer idEntreprise;
+@Table(name = "confrere")
+public class Confrere extends AbstractEntity{
+	
+	private String officine;
+	
+	private String tel;
+	
+	private BigDecimal solde;
+	private Integer idEntreprise;
 
-     @OneToMany(mappedBy = "clients")
-  private List<CommandeClient> commandeClients;
-
-     @OneToMany(mappedBy = "clients")
-  private List<Reglement> reglement ;
- }
+    @OneToMany(mappedBy = "confrere")
+ private List<Echange> echange;
+}
