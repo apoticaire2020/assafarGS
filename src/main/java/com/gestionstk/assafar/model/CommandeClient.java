@@ -25,7 +25,6 @@ import lombok.NoArgsConstructor;
 @Table(name = "commandeclient")
 public class CommandeClient extends AbstractEntity{
 
-  private  Integer idcommande;
     private String code;
     private Instant dateCommande;
     private Integer idEntreprise;
