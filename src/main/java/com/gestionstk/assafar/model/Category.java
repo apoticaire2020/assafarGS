@@ -20,10 +20,12 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "category")
 public class Category extends AbstractEntity {
+	
+	  private String code;
 
-  private String libcategorie;
+     private String libcategorie;
 
-  private Integer idEntreprise;
+      private Integer idEntreprise;
 
   @OneToMany(mappedBy = "category")
   private List<Article> articles;
