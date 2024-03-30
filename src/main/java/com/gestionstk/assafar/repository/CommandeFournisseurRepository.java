@@ -9,7 +9,7 @@ import com.gestionstk.assafar.model.CommandeFournisseur;
 
 public interface CommandeFournisseurRepository extends JpaRepository<CommandeFournisseur, Integer> {
 
-  Optional<CommandeFournisseur> findCommandeFournisseurByCode(String code);
+  //Optional<CommandeFournisseur> findCommandeFournisseurByCode(String code);
 
-  List<CommandeClient> findAllByClientsId(Integer id);
+ // List<CommandeClient> findAllByClientsId(Integer id);
 }

@@ -9,7 +9,7 @@ import com.gestionstk.assafar.model.Article;
 
 public interface ArticleRepository extends JpaRepository<Article, Integer>{
 
-	  Optional<Article> findArticleByCodeArticle(String codeArticle);
+	  Optional<Article> findArticleById(Integer id);
 
 	  List<Article> findAllByCategoryId(Integer idCategory);
 

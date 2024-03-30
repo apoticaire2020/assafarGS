@@ -22,9 +22,9 @@ public class AbstractEntity  {
 	  @GeneratedValue
 	  private Integer id;
 
-	  @CreatedDate
-	  @Column(name = "creationDate", nullable = false, updatable = false)
-	  private Instant creationDate;
+	 // @CreatedDate
+	 // @Column(name = "creationDate", nullable = true, updatable = false)
+	//  private Instant creationDate;
 
 	  @LastModifiedDate
 	  @Column(name = "lastModifiedDate")

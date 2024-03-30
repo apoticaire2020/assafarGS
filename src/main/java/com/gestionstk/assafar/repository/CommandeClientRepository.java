@@ -7,7 +7,7 @@ import com.gestionstk.assafar.model.CommandeClient;
 
 public interface CommandeClientRepository extends JpaRepository<CommandeClient, Integer> {
 
-  Optional<CommandeClient> findCommandeClientByCode(String code);
+  //Optional<CommandeClient> findCommandeClientByCode(String code);
 
-  List<CommandeClient> findAllByClientId(Integer id);
+  //List<CommandeClient> findAllByClientId(Integer id);
 }
